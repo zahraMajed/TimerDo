@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activities.ViewToDo">
+
+    <TextView
+        android:id="@+id/tvActivityTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ToDo"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuidelineRight"
+        app:layout_constraintStart_toStartOf="@id/verticalGuidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuidelineTop"/>
+
+    <ImageView
+        android:id="@+id/backBtnView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuidelineRight"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuidelineTop"
+        app:srcCompat="@drawable/arrow_back_ios" />
+
+    <ImageView
+        android:id="@+id/backBtnSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuidelineRight"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuidelineTop"
+        app:srcCompat="@drawable/arrow_back_ios" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/task_item_view"
+        app:layout_constraintBottom_toTopOf="@+id/LL1View"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuidelineRight"
+        app:layout_constraintStart_toStartOf="@id/verticalGuidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuidelineRVStart"/>
+
+    <LinearLayout
+        android:id="@+id/LL1View"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/horizontalGuidelineBottom"
+        app:layout_constraintEnd_toEndOf="@id/verticalGuidelineRight"
+        app:layout_constraintStart_toStartOf="@id/verticalGuidelineLeft">
+
+        <Button
+            android:id="@+id/btnSummaryTask"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#4F00000C"
+            android:layout_weight="6"
+            android:fontFamily="@font/roboto_medium"
+            android:text="tasks summary"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/btnAddTaskFromView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/add_circle"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="0"
+            />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98"  />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuidelineRVStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
